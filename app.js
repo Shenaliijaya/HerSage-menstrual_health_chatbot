@@ -129,7 +129,10 @@ function createFeedbackBar(idx) {
 function makeBotAvatar() {
   const a = document.createElement("div");
   a.className = "bot-avatar";
-  a.textContent = "\uD83C\uDF38";
+  const img = document.createElement("img");
+  img.src = "HerSage.png";
+  img.alt = "HerSage";
+  a.appendChild(img);
   return a;
 }
 
