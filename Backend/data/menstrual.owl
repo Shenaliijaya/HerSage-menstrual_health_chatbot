@@ -1,0 +1,1083 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:mh="http://example.org/menstrual-health#">
+
+  <owl:Ontology rdf:about="http://example.org/menstrual-health">
+    <rdfs:label>Menstrual Health Ontology</rdfs:label>
+    <rdfs:comment>OWL-DL ontology for menstrual health education and support. Designed for use in an educational AI chatbot. All knowledge is derived from WHO, NHS, MedlinePlus, and UNICEF public health resources.</rdfs:comment>
+    <dc:creator>Shenali Kavinya De Silva Jayasinghe</dc:creator>
+    <dc:source>WHO, NHS, MedlinePlus, UNICEF, UNESCO</dc:source>
+    <dc:description>Initial concept structure derived from MenstLLaMA QnA dataset (Adhikary et al., 2025) through knowledge extraction. Ontology content enriched with educational knowledge from WHO, NHS, MedlinePlus, UNICEF, and UNESCO to ensure medical accuracy and cultural relevance.</dc:description>
+    <owl:versionInfo>2.0 - Final System</owl:versionInfo>
+  </owl:Ontology>
+
+  <!-- ================================================================ -->
+  <!-- ROOT CLASS                                                        -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MenstrualHealth">
+    <rdfs:label>Menstrual Health</rdfs:label>
+    <rdfs:comment>Root concept for all menstrual health topics</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- MAIN CLASSES  [ALL EXISTED - now with descriptions added]        -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MenstrualCycle">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Menstrual Cycle</rdfs:label>
+    <rdfs:comment>The monthly hormonal cycle that prepares the body for pregnancy. A typical cycle lasts between 21 and 35 days. It is divided into four phases: menstruation, follicular, ovulation, and luteal. Source: WHO, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MenstrualSymptom">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Menstrual Symptom</rdfs:label>
+    <rdfs:comment>A physical or emotional change experienced during or around the menstrual cycle. Symptoms vary widely between individuals and across cycles. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MenstrualCondition">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Menstrual Condition</rdfs:label>
+    <rdfs:comment>A medical condition that affects the menstrual cycle, including disorders of timing, flow, pain, or associated hormonal imbalance. These require diagnosis and management by a healthcare professional. Source: MedlinePlus, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#HygieneProduct">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Hygiene Product</rdfs:label>
+    <rdfs:comment>A product used to absorb or collect menstrual blood during menstruation. Options include disposable and reusable products. Choice depends on flow, comfort, lifestyle, and access. Source: UNICEF, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#CulturalContext">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Cultural Context</rdfs:label>
+    <rdfs:comment>The cultural, social, and community factors that shape how menstruation is perceived, discussed, and managed. Cultural context affects access to information, hygiene products, and willingness to seek help. Source: UNICEF, UNESCO.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#AgeGroup">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Age Group</rdfs:label>
+    <rdfs:comment>A classification of individuals based on age and life stage, used to tailor menstrual health education to appropriate developmental and physiological contexts. Source: WHO.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Treatment">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Treatment</rdfs:label>
+    <rdfs:comment>An approach used to manage, relieve, or address menstrual symptoms or conditions. Treatments range from self-care and lifestyle measures to medications and medical procedures. Always consult a doctor before starting any treatment. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW MAIN CLASS: Nutrition -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Nutrition">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Nutrition</rdfs:label>
+    <rdfs:comment>Dietary factors and nutrients that influence menstrual health. Adequate nutrition supports hormonal balance, reduces inflammation, and can alleviate symptoms such as cramps and fatigue. Source: NHS, WHO.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW MAIN CLASS: MenstrualMyth -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#MenstrualMyth">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Menstrual Myth</rdfs:label>
+    <rdfs:comment>A false belief or misconception about menstruation that is common in communities. Addressing myths is essential for reducing stigma, promoting hygiene, and improving health literacy. Source: UNICEF, UNESCO.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW MAIN CLASS: WhenToSeekHelp -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#WhenToSeekHelp">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>When To Seek Help</rdfs:label>
+    <rdfs:comment>Warning signs and situations that indicate a person should consult a doctor or healthcare professional about their menstrual health. Early medical attention prevents complications. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW MAIN CLASS: MenstrualHygienePractice -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#MenstrualHygienePractice">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHealth"/>
+    <rdfs:label>Menstrual Hygiene Practice</rdfs:label>
+    <rdfs:comment>Recommended practices for maintaining hygiene and health during menstruation. Proper hygiene reduces the risk of infection and supports overall wellbeing. Source: UNICEF, WHO.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- CYCLE PHASES  [EXISTED - now with full descriptions]             -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#CyclePhase">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCycle"/>
+    <rdfs:label>Cycle Phase</rdfs:label>
+    <rdfs:comment>One of the four distinct phases of the menstrual cycle, each characterised by specific hormonal changes and physical events. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Menstruation">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#CyclePhase"/>
+    <rdfs:label>Menstruation</rdfs:label>
+    <rdfs:comment>The phase during which the uterine lining (endometrium) sheds and exits the body as menstrual blood. Typically lasts 3 to 7 days. Occurs when a fertilised egg has not implanted. Normal blood loss is 30 to 80 ml per period. Source: NHS, MedlinePlus.</rdfs:comment>
+    <mh:durationDays>3-7</mh:durationDays>
+    <mh:cycleDay>1-7</mh:cycleDay>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#FollicularPhase">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#CyclePhase"/>
+    <rdfs:label>Follicular Phase</rdfs:label>
+    <rdfs:comment>The phase that begins on day 1 of menstruation and ends at ovulation, typically around day 14. The pituitary gland releases follicle-stimulating hormone (FSH), which stimulates follicles in the ovary to mature. Estrogen levels rise, causing the uterine lining to thicken. Energy levels typically increase during this phase. Source: MedlinePlus, NHS.</rdfs:comment>
+    <mh:cycleDay>1-13</mh:cycleDay>
+    <mh:hormones>FSH rises, Estrogen rises</mh:hormones>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Ovulation">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#CyclePhase"/>
+    <rdfs:label>Ovulation</rdfs:label>
+    <rdfs:comment>The release of a mature egg from the ovary, triggered by a surge in luteinising hormone (LH). Occurs around day 14 of a 28-day cycle. The egg travels down the fallopian tube and is viable for fertilisation for 12 to 24 hours. Signs include a slight rise in basal body temperature and a change in cervical mucus to a clear, slippery consistency. Source: NHS, MedlinePlus.</rdfs:comment>
+    <mh:cycleDay>14</mh:cycleDay>
+    <mh:hormones>LH surge, Estrogen peak</mh:hormones>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#LutealPhase">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#CyclePhase"/>
+    <rdfs:label>Luteal Phase</rdfs:label>
+    <rdfs:comment>The phase following ovulation, lasting approximately 14 days. The empty follicle transforms into the corpus luteum, which produces progesterone. If pregnancy does not occur, progesterone and estrogen levels drop, triggering menstruation. PMS symptoms commonly occur during this phase. Source: MedlinePlus, NHS.</rdfs:comment>
+    <mh:cycleDay>15-28</mh:cycleDay>
+    <mh:hormones>Progesterone rises then falls</mh:hormones>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- SYMPTOMS  [EXISTED - now with full descriptions and new subclasses]-->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Pain">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualSymptom"/>
+    <rdfs:label>Pain</rdfs:label>
+    <rdfs:comment>Discomfort or pain associated with the menstrual cycle. Can range from mild cramping to severe, debilitating pain. Pain during menstruation is called dysmenorrhea. Pain is one of the most common menstrual complaints. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Cramps">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Pain"/>
+    <rdfs:label>Cramps</rdfs:label>
+    <rdfs:comment>Painful muscle contractions of the uterus occurring during menstruation. Caused by prostaglandins, which trigger the uterus to contract to shed its lining. Usually felt in the lower abdomen and may radiate to the lower back and thighs. Most common in the first 1-3 days of a period. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Dysmenorrhea">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Pain"/>
+    <rdfs:label>Dysmenorrhea</rdfs:label>
+    <rdfs:comment>Painful menstruation, classified as primary (no underlying condition, caused by prostaglandins) or secondary (caused by an underlying condition such as endometriosis or fibroids). Primary dysmenorrhea typically begins 1-2 days before the period and lasts 2-4 days. Secondary dysmenorrhea tends to worsen over time. Source: MedlinePlus, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: PelvicPain -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#PelvicPain">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Pain"/>
+    <rdfs:label>Pelvic Pain</rdfs:label>
+    <rdfs:comment>Pain felt in the lower abdomen, pelvis, or perineum. Can be acute (sudden) or chronic (lasting 6 months or more). Chronic pelvic pain related to menstruation may indicate endometriosis, fibroids, or pelvic inflammatory disease and should be evaluated by a doctor. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: BackPain -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#BackPain">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Pain"/>
+    <rdfs:label>Back Pain</rdfs:label>
+    <rdfs:comment>Lower back pain that commonly accompanies menstrual cramps. Caused by uterine contractions radiating to the lower back. Usually resolves within 1-3 days of the period starting. Heat therapy and gentle stretching can help. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Bleeding">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualSymptom"/>
+    <rdfs:label>Bleeding</rdfs:label>
+    <rdfs:comment>The flow of menstrual blood during a period. Normal menstrual bleeding lasts 3 to 7 days with a total blood loss of 30 to 80 ml. Colour varies from bright red to dark brown and is normal. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#HeavyBleeding">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Bleeding"/>
+    <rdfs:label>Heavy Bleeding</rdfs:label>
+    <rdfs:comment>Also called menorrhagia. Defined as losing more than 80 ml of blood per period, soaking through a pad or tampon every hour for several consecutive hours, or passing clots larger than a 10p coin. Can cause iron-deficiency anaemia. Should be discussed with a doctor. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#LightBleeding">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Bleeding"/>
+    <rdfs:label>Light Bleeding</rdfs:label>
+    <rdfs:comment>Menstrual flow that is noticeably lighter than usual. May be a variation of normal, or may indicate hormonal imbalance, low body weight, thyroid issues, or early pregnancy. Consistently very light periods should be mentioned to a healthcare provider. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Spotting -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Spotting">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Bleeding"/>
+    <rdfs:label>Spotting</rdfs:label>
+    <rdfs:comment>Light bleeding or brown discharge that occurs outside of normal menstruation. Can happen mid-cycle around ovulation, as implantation bleeding in early pregnancy, or due to hormonal contraceptives, fibroids, or infection. Frequent or unexplained spotting should be assessed by a doctor. Source: MedlinePlus, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MoodSymptom">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualSymptom"/>
+    <rdfs:label>Mood Symptom</rdfs:label>
+    <rdfs:comment>Emotional and psychological changes that occur in association with the menstrual cycle, most commonly during the luteal (premenstrual) phase. Caused by fluctuating estrogen and progesterone levels affecting serotonin. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Anxiety (subclass of MoodSymptom) -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Anxiety">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MoodSymptom"/>
+    <rdfs:label>Anxiety</rdfs:label>
+    <rdfs:comment>Feelings of worry, nervousness, or unease that may intensify before or during a period, particularly during the luteal phase. Linked to drops in estrogen and progesterone affecting brain chemistry. Relaxation techniques, regular sleep, and gentle exercise can help. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: MoodSwings -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#MoodSwings">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MoodSymptom"/>
+    <rdfs:label>Mood Swings</rdfs:label>
+    <rdfs:comment>Rapid changes in emotional state, including irritability, sadness, or sudden tearfulness, occurring in the days before a period. A common feature of premenstrual syndrome (PMS). Affects up to 3 in 4 women at some point. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Depression (subclass of MoodSymptom) -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Depression">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MoodSymptom"/>
+    <rdfs:label>Depression</rdfs:label>
+    <rdfs:comment>Persistent low mood, sadness, or hopelessness linked to the menstrual cycle. When severe and recurring in the luteal phase, this may indicate premenstrual dysphoric disorder (PMDD), which is a serious condition requiring medical support. Source: MedlinePlus, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#PhysicalSymptom">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualSymptom"/>
+    <rdfs:label>Physical Symptom</rdfs:label>
+    <rdfs:comment>Bodily changes and discomforts that occur in relation to the menstrual cycle, including bloating, fatigue, breast tenderness, and headaches. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Bloating -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Bloating">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#PhysicalSymptom"/>
+    <rdfs:label>Bloating</rdfs:label>
+    <rdfs:comment>A feeling of fullness, tightness, or swelling in the abdomen, commonly experienced before and during a period. Caused by hormonal changes that cause the body to retain water and slow digestion. Usually resolves within a few days of the period starting. Reducing salt and caffeine intake can help. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Fatigue -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Fatigue">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#PhysicalSymptom"/>
+    <rdfs:label>Fatigue</rdfs:label>
+    <rdfs:comment>Unusual tiredness or lack of energy before or during a period. Caused by hormonal fluctuations and, in cases of heavy bleeding, by iron deficiency. Adequate sleep, gentle exercise, and iron-rich foods can help manage fatigue. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Headache -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Headache">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#PhysicalSymptom"/>
+    <rdfs:label>Headache</rdfs:label>
+    <rdfs:comment>Menstrual headaches or migraines occur due to the drop in estrogen levels just before a period begins. Menstrual migraines are more severe than regular headaches and may be accompanied by nausea and sensitivity to light. Staying hydrated, regular sleep, and over-the-counter pain relief can help. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: BreastTenderness -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#BreastTenderness">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#PhysicalSymptom"/>
+    <rdfs:label>Breast Tenderness</rdfs:label>
+    <rdfs:comment>Soreness, swelling, or sensitivity in the breasts during the luteal phase. Caused by rising progesterone levels. Usually resolves once the period starts. Wearing a supportive bra and reducing caffeine may help. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Nausea -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Nausea">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#PhysicalSymptom"/>
+    <rdfs:label>Nausea</rdfs:label>
+    <rdfs:comment>A feeling of sickness or the urge to vomit that can occur during menstruation. Caused by prostaglandins, which can enter the bloodstream and affect the stomach. Usually mild and resolves within 1-2 days. Eating small frequent meals and staying hydrated can help. Source: MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- CONDITIONS  [EXISTED - now with full descriptions and new classes]-->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#IrregularPeriods">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:label>Irregular Periods</rdfs:label>
+    <rdfs:comment>Periods that occur less predictably than usual, with cycle lengths varying by more than 7-9 days between cycles. Causes include stress, significant weight changes, excessive exercise, thyroid disorders, PCOS, or perimenopause. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Amenorrhea">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#IrregularPeriods"/>
+    <rdfs:label>Amenorrhea</rdfs:label>
+    <rdfs:comment>The absence of menstruation. Primary amenorrhea means menstruation has never started by age 15-16. Secondary amenorrhea means periods stop for 3 or more months in someone who previously had regular cycles. Common causes include pregnancy, extreme weight loss, excessive exercise, stress, thyroid disorders, and PCOS. Always consult a doctor. Source: MedlinePlus, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#PCOS">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:label>PCOS</rdfs:label>
+    <rdfs:comment>Polycystic Ovary Syndrome (PCOS) is a common hormonal disorder affecting 1 in 10 women of reproductive age. Characterised by high levels of androgens (male hormones), irregular or absent periods, and multiple small cysts on the ovaries. Symptoms include weight gain, excess hair growth (hirsutism), acne, and thinning hair. Associated with insulin resistance. Long-term risks include type 2 diabetes and heart disease. Management includes lifestyle changes, medication, and regular monitoring. Source: NHS, WHO.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Endometriosis">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:label>Endometriosis</rdfs:label>
+    <rdfs:comment>A chronic condition where tissue similar to the uterine lining grows outside the uterus, commonly on the ovaries, fallopian tubes, and pelvic tissue. Affects approximately 1 in 10 women. Symptoms include severe pelvic pain before and during periods, pain during or after sex, pain during urination or bowel movements, and difficulty conceiving. Often takes 7-10 years to diagnose. There is no cure, but symptoms can be managed through medication, hormone therapy, or surgery. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: PMS -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#PMS">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:label>PMS</rdfs:label>
+    <rdfs:comment>Premenstrual Syndrome (PMS) is a combination of physical and emotional symptoms that occur 1-2 weeks before a period and typically improve when the period starts. Affects up to 3 in 4 women. Common symptoms include bloating, breast tenderness, mood swings, irritability, fatigue, and food cravings. Caused by hormonal changes during the luteal phase. Management includes regular exercise, healthy diet, stress reduction, and in some cases medication. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: PMDD -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#PMDD">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:label>PMDD</rdfs:label>
+    <rdfs:comment>Premenstrual Dysphoric Disorder (PMDD) is a severe form of PMS causing debilitating emotional and physical symptoms in the luteal phase. Affects around 3-8% of women. Symptoms include severe depression, intense anger, panic attacks, and inability to carry out daily activities. Requires medical diagnosis and treatment, which may include antidepressants, hormonal therapy, or psychological support. Source: MedlinePlus, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Fibroids -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Fibroids">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:label>Fibroids</rdfs:label>
+    <rdfs:comment>Uterine fibroids (leiomyomas) are non-cancerous growths in or around the uterus. Affect 2 in 3 women during their lifetime. Many cause no symptoms. When symptomatic, they cause heavy or prolonged periods, pelvic pain, frequent urination, and difficulty conceiving. More common in Black women. Treatment options depend on severity and include medication, non-surgical procedures, and surgery. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Menarche -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Menarche">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:label>Menarche</rdfs:label>
+    <rdfs:comment>The first menstrual period, marking the beginning of reproductive life. Typically occurs between ages 10 and 16, with an average of 12-13 years. In the first 1-2 years, cycles are often irregular as the hormonal system matures. Normal to feel confused, scared, or unprepared. This is a natural and healthy process. Source: WHO, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Perimenopause -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Perimenopause">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:label>Perimenopause</rdfs:label>
+    <rdfs:comment>The transitional period before menopause when the ovaries gradually produce less estrogen. Usually begins in the mid-40s and lasts 4-8 years. Periods become irregular, flow may change, and symptoms such as hot flushes, night sweats, and mood changes may occur. Not the same as menopause. Consult a doctor for management options. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- HYGIENE PRODUCTS  [EXISTED - now with descriptions + new items]  -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Pad">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#HygieneProduct"/>
+    <rdfs:label>Pad</rdfs:label>
+    <rdfs:comment>A disposable absorbent pad worn inside underwear to absorb menstrual blood. Available in different sizes and absorbency levels (light, regular, heavy, overnight). Should be changed every 3-4 hours. Most widely used product globally. Suitable for all flow levels. Source: UNICEF, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Tampon">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#HygieneProduct"/>
+    <rdfs:label>Tampon</rdfs:label>
+    <rdfs:comment>A small disposable absorbent cylinder inserted into the vagina to absorb menstrual blood internally. Available in different absorbency levels. Should be changed every 4-8 hours and never left in for more than 8 hours due to the risk of Toxic Shock Syndrome (TSS). Safe for people who have not had sex. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MenstrualCup">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#HygieneProduct"/>
+    <rdfs:label>Menstrual Cup</rdfs:label>
+    <rdfs:comment>A reusable funnel-shaped cup made of medical-grade silicone, rubber, or latex, inserted into the vagina to collect menstrual blood. Can be worn for up to 12 hours. One cup lasts up to 10 years with proper care, making it environmentally friendly and cost-effective. Must be cleaned with soap and water and sterilised between cycles. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Reusable Cloth Pad -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#ReusableClothPad">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#HygieneProduct"/>
+    <rdfs:label>Reusable Cloth Pad</rdfs:label>
+    <rdfs:comment>A washable pad made from fabric, worn inside underwear to absorb menstrual blood. Commonly used in low-income settings as an affordable and sustainable alternative to disposable pads. Must be washed thoroughly with clean water and soap and dried in sunlight to prevent infection. Source: UNICEF.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Period Underwear -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#PeriodUnderwear">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#HygieneProduct"/>
+    <rdfs:label>Period Underwear</rdfs:label>
+    <rdfs:comment>Specially designed reusable underwear with built-in absorbent layers that hold menstrual blood. Can be used alone for light to moderate flow, or as a backup with other products. Washed and reused like regular underwear. Environmentally sustainable option. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- CULTURAL CONTEXT  [EXISTED - expanded significantly]            -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#SouthAsian">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#CulturalContext"/>
+    <rdfs:label>South Asian</rdfs:label>
+    <rdfs:comment>Cultural context relevant to South Asian communities (including Sri Lanka, India, Bangladesh, Pakistan, Nepal). Menstruation is often considered impure or taboo. Practices may include restrictions on entering religious places, touching food, or participating in ceremonies during menstruation. Awareness of these cultural norms is essential for providing respectful and accepted health guidance. Source: UNICEF, UNESCO.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: SriLankan -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#SriLankan">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#SouthAsian"/>
+    <rdfs:label>Sri Lankan</rdfs:label>
+    <rdfs:comment>Cultural context specific to Sri Lanka. The first period (menarche) is often marked by a coming-of-age ceremony. Religious traditions (Buddhist, Hindu, Muslim) may involve restrictions during menstruation. In rural areas, awareness and access to menstrual products may be limited. Sinhala and Tamil are primary languages. Culturally sensitive communication avoids shame-based language. Source: UNICEF.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Western">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#CulturalContext"/>
+    <rdfs:label>Western</rdfs:label>
+    <rdfs:comment>Cultural context of Western countries (e.g. UK, USA, Europe) where menstruation is generally discussed more openly. Access to a wide range of menstrual products is typically available. However, stigma and misinformation still exist. School-based menstrual health education is more common. Source: WHO.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Conservative">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#CulturalContext"/>
+    <rdfs:label>Conservative</rdfs:label>
+    <rdfs:comment>A cultural context in which menstruation is treated as a private or shameful topic, not discussed openly. Women may not feel comfortable seeking help or discussing symptoms. Health communication in conservative contexts should use respectful, non-clinical, and non-stigmatising language. Source: UNESCO, UNICEF.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- AGE GROUPS  [EXISTED - now with full descriptions]              -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Adolescent">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#AgeGroup"/>
+    <rdfs:label>Adolescent</rdfs:label>
+    <rdfs:comment>Individuals aged 10-19 years. May be experiencing menarche for the first time or in the early years of menstruation where cycles are often irregular. Education should be age-appropriate, reassuring, and non-stigmatising. Key topics include what to expect, how to use hygiene products, and when to seek help. Source: WHO, UNICEF.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#YoungAdult">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#AgeGroup"/>
+    <rdfs:label>Young Adult</rdfs:label>
+    <rdfs:comment>Individuals aged 20-35 years in their established reproductive years. Cycles are typically regular. Key topics include managing symptoms, conditions such as PCOS and endometriosis, reproductive health, and contraception choices. Source: WHO.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MiddleAge">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#AgeGroup"/>
+    <rdfs:label>Middle Age</rdfs:label>
+    <rdfs:comment>Individuals aged 35-55 years. May begin to notice changes in cycle regularity and flow associated with perimenopause. Key topics include recognising perimenopausal changes, managing fibroids, and when to see a doctor about irregular bleeding. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- TREATMENTS  [EXISTED - expanded with new subclasses]            -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#Medication">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Treatment"/>
+    <rdfs:label>Medication</rdfs:label>
+    <rdfs:comment>Pharmaceutical treatments for managing menstrual symptoms or conditions. Should only be taken as directed by a pharmacist or doctor. Common options include NSAIDs for pain, hormonal treatments for conditions, and iron supplements for anaemia caused by heavy bleeding. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: NSAIDs -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#NSAIDs">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Medication"/>
+    <rdfs:label>NSAIDs</rdfs:label>
+    <rdfs:comment>Non-Steroidal Anti-Inflammatory Drugs such as ibuprofen and naproxen. Reduce prostaglandins, which cause uterine contractions and pain. Most effective when taken at the start of a period or just before. Also reduce heavy bleeding. Should be taken with food. Not suitable for everyone - consult a pharmacist. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: HormonalContraceptives -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#HormonalContraceptives">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Medication"/>
+    <rdfs:label>Hormonal Contraceptives</rdfs:label>
+    <rdfs:comment>Medications such as the combined pill, progesterone-only pill, hormonal IUD, or injection that regulate hormones and can reduce period pain, heavy bleeding, and symptoms of endometriosis or PCOS. Must be prescribed by a doctor. Have different suitability profiles depending on individual health history. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: IronSupplements -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#IronSupplements">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Medication"/>
+    <rdfs:label>Iron Supplements</rdfs:label>
+    <rdfs:comment>Supplements taken to treat iron-deficiency anaemia, which can result from heavy menstrual bleeding. Symptoms of anaemia include fatigue, pale skin, and breathlessness. Iron-rich foods (lentils, spinach, red meat) should also be increased. Best absorbed with vitamin C. Should be recommended by a doctor. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#LifestyleChange">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Treatment"/>
+    <rdfs:label>Lifestyle Change</rdfs:label>
+    <rdfs:comment>Modifications to daily habits that can help manage menstrual symptoms. Include regular physical activity, a balanced diet, stress management, adequate sleep, and reducing alcohol and caffeine. Evidence supports lifestyle changes as first-line management for PMS, dysmenorrhea, and PCOS. Source: NHS, WHO.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#SelfCare">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Treatment"/>
+    <rdfs:label>Self Care</rdfs:label>
+    <rdfs:comment>Personal comfort measures to relieve menstrual symptoms at home. Include heat therapy, rest, gentle exercise, and staying hydrated. Accessible to most people regardless of income or location. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: HeatTherapy -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#HeatTherapy">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#SelfCare"/>
+    <rdfs:label>Heat Therapy</rdfs:label>
+    <rdfs:comment>Applying a heat pad, hot water bottle, or warm towel to the lower abdomen or back to relieve menstrual cramps and backache. Heat relaxes the uterine muscle and increases blood flow. As effective as ibuprofen for mild-to-moderate cramps according to NHS guidance. Safe and accessible. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- NEW: Yoga -->
+  <owl:Class rdf:about="http://example.org/menstrual-health#Yoga">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#SelfCare"/>
+    <rdfs:label>Yoga</rdfs:label>
+    <rdfs:comment>Gentle yoga poses and breathing exercises can reduce menstrual pain, bloating, fatigue, and mood symptoms. Particularly effective poses include Child's Pose, Cat-Cow, and supine twists. Regular practice may reduce PMS and dysmenorrhea severity over time. Source: MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- NEW CLASS HIERARCHY: NUTRITION                                   -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#IronRichFood">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Nutrition"/>
+    <rdfs:label>Iron Rich Food</rdfs:label>
+    <rdfs:comment>Foods that help replenish iron lost during menstruation. Important for preventing anaemia, particularly during heavy periods. Examples include lentils, spinach, tofu, red meat, fortified cereals, and dark chocolate. Consuming with vitamin C (e.g. orange juice) improves iron absorption. Source: NHS, WHO.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#AntiInflammatoryFood">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Nutrition"/>
+    <rdfs:label>Anti Inflammatory Food</rdfs:label>
+    <rdfs:comment>Foods that reduce inflammation and can help decrease prostaglandin levels, thereby reducing menstrual cramps and pain. Examples include oily fish (salmon, mackerel), walnuts, flaxseed, leafy green vegetables, berries, and turmeric. A diet rich in these foods has been associated with reduced dysmenorrhea severity. Source: MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#FoodsToAvoid">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#Nutrition"/>
+    <rdfs:label>Foods To Avoid</rdfs:label>
+    <rdfs:comment>Foods and drinks that may worsen menstrual symptoms. Excess salt increases water retention and bloating. Caffeine can worsen cramps, headaches, and anxiety. Alcohol disrupts hormonal balance and worsens mood symptoms. High-sugar foods cause energy crashes and mood fluctuations. Reducing these during the premenstrual and menstrual phase is recommended. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- NEW CLASS HIERARCHY: MENSTRUAL MYTHS                             -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MythAboutActivity">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualMyth"/>
+    <rdfs:label>Myth About Activity</rdfs:label>
+    <rdfs:comment>False beliefs that menstruating individuals should avoid certain activities. FACT: There is no medical reason to restrict physical activity, swimming, exercise, or daily tasks during menstruation. Exercise can actually relieve cramps and improve mood. Source: WHO, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MythAboutPurity">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualMyth"/>
+    <rdfs:label>Myth About Purity</rdfs:label>
+    <rdfs:comment>The false belief that menstruating individuals are impure, unclean, or spiritually contaminated. FACT: Menstruation is a normal, healthy biological process. There is no scientific basis for viewing menstruation as impure. Such beliefs can prevent people from accessing hygiene facilities, education, and healthcare. Source: UNICEF, UNESCO.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#MythAboutPain">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualMyth"/>
+    <rdfs:label>Myth About Pain</rdfs:label>
+    <rdfs:comment>The false belief that severe menstrual pain is normal and must be endured. FACT: While mild cramps are common, severe pain that disrupts daily life is not normal and may indicate a condition such as endometriosis or fibroids. People with severe pain should see a doctor. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- NEW CLASS HIERARCHY: WHEN TO SEEK HELP                          -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#RedFlagSymptom">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#WhenToSeekHelp"/>
+    <rdfs:label>Red Flag Symptom</rdfs:label>
+    <rdfs:comment>A warning sign that requires prompt medical evaluation. Red flag symptoms should not be ignored or dismissed. Seeking help early leads to better outcomes. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#SeesDoctorForPain">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#WhenToSeekHelp"/>
+    <rdfs:label>See Doctor For Pain</rdfs:label>
+    <rdfs:comment>You should see a doctor if: menstrual pain is severe enough to prevent daily activities, pain is getting progressively worse over several cycles, pain occurs outside of menstruation, or over-the-counter pain relief does not help. These may be signs of endometriosis, fibroids, or another condition requiring diagnosis. Source: NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#SeesDoctorForBleeding">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#WhenToSeekHelp"/>
+    <rdfs:label>See Doctor For Bleeding</rdfs:label>
+    <rdfs:comment>You should see a doctor if: periods last longer than 7 days, you soak through a pad or tampon every hour for 2 or more hours, you pass blood clots larger than a 10p coin, you experience bleeding between periods or after sex, or if you have gone 3 or more months without a period. These may indicate fibroids, PCOS, polyps, or another condition. Source: NHS, MedlinePlus.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- NEW CLASS HIERARCHY: HYGIENE PRACTICES                          -->
+  <!-- ================================================================ -->
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#ProductChangePractice">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHygienePractice"/>
+    <rdfs:label>Product Change Practice</rdfs:label>
+    <rdfs:comment>Guidance on how often to change menstrual hygiene products. Pads should be changed every 3-4 hours. Tampons should be changed every 4-8 hours and never left in for more than 8 hours. Menstrual cups can be worn for up to 12 hours. Changing products regularly prevents bacterial growth and odour and reduces infection risk. Source: NHS, UNICEF.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#WashingPractice">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHygienePractice"/>
+    <rdfs:label>Washing Practice</rdfs:label>
+    <rdfs:comment>During menstruation, wash the external genital area (vulva) with clean water and mild unperfumed soap once or twice daily. Do not douche or clean inside the vagina as this disrupts the natural bacterial balance and increases infection risk. Hands should be washed before and after changing products. Source: WHO, NHS.</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/menstrual-health#DisposalPractice">
+    <rdfs:subClassOf rdf:resource="http://example.org/menstrual-health#MenstrualHygienePractice"/>
+    <rdfs:label>Disposal Practice</rdfs:label>
+    <rdfs:comment>Used disposable pads and tampons should be wrapped and disposed of in a bin. They should never be flushed down the toilet as they block plumbing and pollute waterways. In areas without bins, wrapping in paper or newspaper is recommended. Source: UNICEF.</rdfs:comment>
+  </owl:Class>
+
+  <!-- ================================================================ -->
+  <!-- OBJECT PROPERTIES  [4 EXISTED - 4 new ones added]              -->
+  <!-- ================================================================ -->
+
+  <owl:ObjectProperty rdf:about="http://example.org/menstrual-health#hasSymptom">
+    <rdfs:label>has Symptom</rdfs:label>
+    <rdfs:comment>Links a menstrual cycle or condition to a symptom it commonly causes.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/menstrual-health#MenstrualCycle"/>
+    <rdfs:range rdf:resource="http://example.org/menstrual-health#MenstrualSymptom"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/menstrual-health#causedBy">
+    <rdfs:label>caused By</rdfs:label>
+    <rdfs:comment>Links a symptom or condition to its underlying cause.</rdfs:comment>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/menstrual-health#treatedBy">
+    <rdfs:label>treated By</rdfs:label>
+    <rdfs:comment>Links a condition or symptom to a recommended treatment approach.</rdfs:comment>
+    <rdfs:range rdf:resource="http://example.org/menstrual-health#Treatment"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/menstrual-health#requiresProduct">
+    <rdfs:label>requires Product</rdfs:label>
+    <rdfs:comment>Links a symptom or situation to a recommended hygiene product.</rdfs:comment>
+    <rdfs:range rdf:resource="http://example.org/menstrual-health#HygieneProduct"/>
+  </owl:ObjectProperty>
+
+  <!-- NEW: associatedWith -->
+  <owl:ObjectProperty rdf:about="http://example.org/menstrual-health#associatedWith">
+    <rdfs:label>associated With</rdfs:label>
+    <rdfs:comment>Links a condition to other related conditions or symptoms that commonly co-occur with it.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/menstrual-health#MenstrualCondition"/>
+    <rdfs:range rdf:resource="http://example.org/menstrual-health#MenstrualSymptom"/>
+  </owl:ObjectProperty>
+
+  <!-- NEW: occursInPhase -->
+  <owl:ObjectProperty rdf:about="http://example.org/menstrual-health#occursInPhase">
+    <rdfs:label>occurs In Phase</rdfs:label>
+    <rdfs:comment>Links a symptom to the cycle phase in which it most commonly occurs.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/menstrual-health#MenstrualSymptom"/>
+    <rdfs:range rdf:resource="http://example.org/menstrual-health#CyclePhase"/>
+  </owl:ObjectProperty>
+
+  <!-- NEW: appropriateFor -->
+  <owl:ObjectProperty rdf:about="http://example.org/menstrual-health#appropriateFor">
+    <rdfs:label>appropriate For</rdfs:label>
+    <rdfs:comment>Links a treatment, product, or practice to the age group it is most appropriate for.</rdfs:comment>
+    <rdfs:range rdf:resource="http://example.org/menstrual-health#AgeGroup"/>
+  </owl:ObjectProperty>
+
+  <!-- NEW: commonInCulture -->
+  <owl:ObjectProperty rdf:about="http://example.org/menstrual-health#commonInCulture">
+    <rdfs:label>common In Culture</rdfs:label>
+    <rdfs:comment>Links a myth, practice, or belief to the cultural context in which it commonly occurs.</rdfs:comment>
+    <rdfs:range rdf:resource="http://example.org/menstrual-health#CulturalContext"/>
+  </owl:ObjectProperty>
+
+  <!-- ================================================================ -->
+  <!-- DATA PROPERTIES  [4 EXISTED - 5 new ones added]                -->
+  <!-- ================================================================ -->
+
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#severity">
+    <rdfs:label>severity</rdfs:label>
+    <rdfs:comment>The severity level of a symptom (Mild, Moderate, Severe).</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#duration">
+    <rdfs:label>duration</rdfs:label>
+    <rdfs:comment>Duration in days of a symptom or condition instance.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#description">
+    <rdfs:label>description</rdfs:label>
+    <rdfs:comment>A plain-language educational description of an instance.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#daysPerCycle">
+    <rdfs:label>days Per Cycle</rdfs:label>
+    <rdfs:comment>Total number of days in a menstrual cycle.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <!-- NEW: durationDays (string range for flexible descriptions like "3-7") -->
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#durationDays">
+    <rdfs:label>duration Days</rdfs:label>
+    <rdfs:comment>Duration expressed as a string range (e.g. "3-7 days") for use in educational responses.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- NEW: cycleDay -->
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#cycleDay">
+    <rdfs:label>cycle Day</rdfs:label>
+    <rdfs:comment>The day or day range of a typical 28-day cycle in which a phase or event occurs (e.g. "14" or "15-28").</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- NEW: hormones -->
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#hormones">
+    <rdfs:label>hormones</rdfs:label>
+    <rdfs:comment>The primary hormones involved or changing during a cycle phase or condition (e.g. "Estrogen rises, FSH rises").</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- NEW: prevalence -->
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#prevalence">
+    <rdfs:label>prevalence</rdfs:label>
+    <rdfs:comment>Approximate prevalence of a condition in the relevant population (e.g. "1 in 10 women of reproductive age").</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- NEW: educationalNote -->
+  <owl:DatatypeProperty rdf:about="http://example.org/menstrual-health#educationalNote">
+    <rdfs:label>educational Note</rdfs:label>
+    <rdfs:comment>A short reassuring or educational note suitable for direct display to a user in the chatbot interface.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- ================================================================ -->
+  <!-- INSTANCES  [15 EXISTED - significantly enriched + 30 new added] -->
+  <!-- ================================================================ -->
+
+  <!-- == CYCLE INSTANCES == -->
+
+  <mh:MenstrualCycle rdf:about="http://example.org/menstrual-health#RegularCycle_28Days">
+    <rdfs:label>Regular 28-Day Cycle</rdfs:label>
+    <mh:daysPerCycle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</mh:daysPerCycle>
+    <mh:description>A 28-day cycle is the textbook average, though normal cycles range from 21 to 35 days. Day 1 is the first day of bleeding. The cycle is driven by four hormones: FSH, LH, estrogen, and progesterone.</mh:description>
+    <mh:educationalNote>A 28-day cycle is the average, but cycles between 21 and 35 days are all considered normal. Your cycle may vary from month to month.</mh:educationalNote>
+    <mh:hasSymptom rdf:resource="http://example.org/menstrual-health#Cramping_Mild"/>
+  </mh:MenstrualCycle>
+
+  <!-- NEW: Short cycle -->
+  <mh:MenstrualCycle rdf:about="http://example.org/menstrual-health#ShortCycle_21Days">
+    <rdfs:label>Short 21-Day Cycle</rdfs:label>
+    <mh:daysPerCycle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</mh:daysPerCycle>
+    <mh:description>A cycle of 21 days is at the shorter end of the normal range. If cycles are consistently shorter than 21 days, this is called polymenorrhea and may be worth discussing with a doctor.</mh:description>
+    <mh:educationalNote>Cycles as short as 21 days are normal. If yours is consistently shorter than 21 days, it is worth mentioning to a doctor.</mh:educationalNote>
+  </mh:MenstrualCycle>
+
+  <!-- NEW: Long cycle -->
+  <mh:MenstrualCycle rdf:about="http://example.org/menstrual-health#LongCycle_35Days">
+    <rdfs:label>Long 35-Day Cycle</rdfs:label>
+    <mh:daysPerCycle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</mh:daysPerCycle>
+    <mh:description>A cycle of 35 days is at the longer end of the normal range. Cycles longer than 35 days are called oligomenorrhea and may be linked to PCOS or other hormonal issues. Consult a doctor if cycles are consistently over 35 days.</mh:description>
+    <mh:educationalNote>Cycles up to 35 days are within the normal range. Consistently longer cycles should be discussed with a healthcare provider.</mh:educationalNote>
+  </mh:MenstrualCycle>
+
+  <!-- == PHASE INSTANCES == -->
+
+  <mh:Menstruation rdf:about="http://example.org/menstrual-health#MenstruationPhase_Normal">
+    <rdfs:label>Normal Menstruation Phase</rdfs:label>
+    <mh:durationDays>3-7 days</mh:durationDays>
+    <mh:cycleDay>Days 1 to 7</mh:cycleDay>
+    <mh:hormones>Estrogen and progesterone are low at the start</mh:hormones>
+    <mh:description>During menstruation, the uterine lining sheds. You may experience cramps, lower back pain, fatigue, and mood changes. Bleeding colour ranges from bright red to dark brown and all colours are normal. Normal blood loss is about 30-80 ml (roughly 3-6 tablespoons) over the entire period.</mh:description>
+    <mh:educationalNote>Experiencing cramps, fatigue, and mood changes during your period is completely normal. If pain is severe or prevents you from going about your day, speak to a doctor.</mh:educationalNote>
+  </mh:Menstruation>
+
+  <mh:FollicularPhase rdf:about="http://example.org/menstrual-health#FollicularPhase_Normal">
+    <rdfs:label>Normal Follicular Phase</rdfs:label>
+    <mh:durationDays>Approximately 13 days</mh:durationDays>
+    <mh:cycleDay>Days 1 to 13</mh:cycleDay>
+    <mh:hormones>FSH and estrogen rise gradually</mh:hormones>
+    <mh:description>The follicular phase overlaps with menstruation and ends at ovulation. FSH stimulates follicles to mature. Rising estrogen causes the uterine lining to thicken in preparation for a potential pregnancy. Many people feel their energy levels rise as estrogen increases during this phase.</mh:description>
+    <mh:educationalNote>It is common to feel more energetic and positive as estrogen rises during the follicular phase. This is a normal hormonal pattern.</mh:educationalNote>
+  </mh:FollicularPhase>
+
+  <mh:Ovulation rdf:about="http://example.org/menstrual-health#Ovulation_Normal">
+    <rdfs:label>Normal Ovulation</rdfs:label>
+    <mh:cycleDay>Around Day 14 in a 28-day cycle</mh:cycleDay>
+    <mh:hormones>LH surge triggers egg release; estrogen peaks</mh:hormones>
+    <mh:description>Ovulation is when one ovary releases a mature egg. Signs include a slight twinge or pain on one side of the lower abdomen (called mittelschmerz), changes in cervical mucus (becomes clear and slippery, like egg white), and a slight rise in basal body temperature. The egg is viable for 12-24 hours. Sperm can survive for up to 5 days, so the fertile window is approximately 5 days before and 1 day after ovulation.</mh:description>
+    <mh:educationalNote>Ovulation pain (mittelschmerz) is normal and usually passes within a few hours. If pain is severe, see a doctor.</mh:educationalNote>
+  </mh:Ovulation>
+
+  <mh:LutealPhase rdf:about="http://example.org/menstrual-health#LutealPhase_Normal">
+    <rdfs:label>Normal Luteal Phase</rdfs:label>
+    <mh:durationDays>Approximately 14 days</mh:durationDays>
+    <mh:cycleDay>Days 15 to 28</mh:cycleDay>
+    <mh:hormones>Progesterone rises then falls; estrogen drops before period</mh:hormones>
+    <mh:description>After ovulation, the empty follicle becomes the corpus luteum and produces progesterone. If no pregnancy occurs, progesterone and estrogen fall sharply, triggering menstruation. PMS symptoms (bloating, mood changes, breast tenderness, fatigue) are most common in the second half of this phase, roughly 7-10 days before a period.</mh:description>
+    <mh:educationalNote>The mood and physical changes you feel before your period are caused by falling hormone levels. PMS is real and common - up to 3 in 4 people experience it.</mh:educationalNote>
+  </mh:LutealPhase>
+
+  <!-- == SYMPTOM INSTANCES == -->
+
+  <mh:Cramps rdf:about="http://example.org/menstrual-health#Cramping_Mild">
+    <rdfs:label>Mild Cramping</rdfs:label>
+    <mh:severity>Mild</mh:severity>
+    <mh:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</mh:duration>
+    <mh:description>Mild cramping is a normal part of menstruation for many people. It is caused by the uterus contracting to shed its lining. Usually manageable with heat therapy, gentle movement, or over-the-counter pain relief such as ibuprofen.</mh:description>
+    <mh:educationalNote>Mild cramps for the first 1-2 days of your period are very common and normal. A warm heat pad on your lower abdomen can provide effective relief.</mh:educationalNote>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#HeatingPadTreatment"/>
+  </mh:Cramps>
+
+  <mh:Cramps rdf:about="http://example.org/menstrual-health#Cramping_Severe">
+    <rdfs:label>Severe Cramping</rdfs:label>
+    <mh:severity>Severe</mh:severity>
+    <mh:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</mh:duration>
+    <mh:description>Severe cramping that prevents daily activities is not normal and should not be ignored. It may indicate primary or secondary dysmenorrhea, endometriosis, fibroids, or pelvic inflammatory disease. Medical evaluation is recommended.</mh:description>
+    <mh:educationalNote>Severe period pain that stops you going to school, work, or daily activities is not something you have to endure. Please speak to a doctor - there are effective treatments available.</mh:educationalNote>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#IbuprofenPainRelief"/>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#HeatingPadTreatment"/>
+  </mh:Cramps>
+
+  <mh:HeavyBleeding rdf:about="http://example.org/menstrual-health#HeavyBleeding_Abnormal">
+    <rdfs:label>Abnormal Heavy Bleeding</rdfs:label>
+    <mh:severity>Severe</mh:severity>
+    <mh:description>Heavy menstrual bleeding (menorrhagia) means soaking through a pad or tampon every hour for 2 or more consecutive hours, periods lasting more than 7 days, or passing large clots (bigger than a 10p coin). Can cause iron-deficiency anaemia with symptoms of tiredness, pale skin, and dizziness. Should be discussed with a doctor. Possible causes include fibroids, PCOS, thyroid issues, or bleeding disorders.</mh:description>
+    <mh:educationalNote>If you are soaking through a pad or tampon every hour for several hours, please see a doctor. Heavy bleeding can be treated effectively once the cause is found.</mh:educationalNote>
+    <mh:requiresProduct rdf:resource="http://example.org/menstrual-health#StandardPad_Regular"/>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#IronSupplementsInstance"/>
+  </mh:HeavyBleeding>
+
+  <!-- NEW: Bloating instance -->
+  <mh:Bloating rdf:about="http://example.org/menstrual-health#Bloating_Premenstrual">
+    <rdfs:label>Premenstrual Bloating</rdfs:label>
+    <mh:severity>Mild to Moderate</mh:severity>
+    <mh:description>Abdominal bloating and feelings of fullness in the 1-2 weeks before a period. Caused by progesterone slowing the digestive system and the body retaining water. Usually resolves when the period starts. Reducing salt, caffeine, and processed foods can help reduce water retention.</mh:description>
+    <mh:educationalNote>Feeling bloated before your period is very common. Reducing salty foods and staying hydrated can help reduce the bloating.</mh:educationalNote>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#ReducedSaltDiet"/>
+  </mh:Bloating>
+
+  <!-- NEW: Fatigue instance -->
+  <mh:Fatigue rdf:about="http://example.org/menstrual-health#Fatigue_Menstrual">
+    <rdfs:label>Menstrual Fatigue</rdfs:label>
+    <mh:severity>Mild to Moderate</mh:severity>
+    <mh:description>Tiredness and low energy during menstruation or in the premenstrual phase. Can be worsened by heavy bleeding leading to iron deficiency. Iron-rich foods (lentils, spinach, red meat) and adequate sleep help manage menstrual fatigue. Severe or persistent fatigue should be checked by a doctor to rule out anaemia.</mh:description>
+    <mh:educationalNote>Feeling tired during your period is normal. Eating iron-rich foods like lentils and spinach and getting enough sleep will help. If fatigue is severe, see a doctor to check for anaemia.</mh:educationalNote>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#IronRichFoodInstance"/>
+  </mh:Fatigue>
+
+  <!-- NEW: Headache instance -->
+  <mh:Headache rdf:about="http://example.org/menstrual-health#Headache_Menstrual">
+    <rdfs:label>Menstrual Headache</rdfs:label>
+    <mh:severity>Mild to Moderate</mh:severity>
+    <mh:description>Headaches occurring around the time of a period, often triggered by the drop in estrogen just before bleeding begins. Staying well hydrated, maintaining a regular sleep schedule, and taking OTC pain relief at the first sign of a headache can help. Severe or sudden headaches should be evaluated medically.</mh:description>
+    <mh:educationalNote>Headaches just before or at the start of your period are common and caused by falling estrogen. Drinking plenty of water and getting regular sleep can reduce their frequency.</mh:educationalNote>
+  </mh:Headache>
+
+  <!-- == CONDITION INSTANCES == -->
+
+  <mh:PCOS rdf:about="http://example.org/menstrual-health#PCOS_Diagnosed">
+    <rdfs:label>PCOS Diagnosis</rdfs:label>
+    <mh:prevalence>Affects approximately 1 in 10 women of reproductive age</mh:prevalence>
+    <mh:description>Polycystic Ovary Syndrome (PCOS) is a hormonal condition where the ovaries produce excess androgens. Diagnosed based on at least 2 of 3 criteria: irregular periods, high androgen levels, and polycystic ovaries on ultrasound. Symptoms include irregular or absent periods, acne, excess body or facial hair, weight gain, and thinning scalp hair. Linked to insulin resistance. Associated with increased risk of type 2 diabetes and cardiovascular disease. Management includes lifestyle changes (diet and exercise), medications to regulate periods or reduce androgen effects, and fertility treatment if needed. There is no cure but symptoms can be effectively managed.</mh:description>
+    <mh:educationalNote>PCOS is very common and very manageable. With the right support from a doctor, most people with PCOS live full, healthy lives. Diet, exercise, and sometimes medication make a real difference.</mh:educationalNote>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#ExerciseRegimen"/>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#HormonalContraceptivesInstance"/>
+  </mh:PCOS>
+
+  <mh:Endometriosis rdf:about="http://example.org/menstrual-health#Endometriosis_Diagnosed">
+    <rdfs:label>Endometriosis Diagnosis</rdfs:label>
+    <mh:prevalence>Affects approximately 1 in 10 women; often takes 7-10 years to diagnose</mh:prevalence>
+    <mh:description>Endometriosis is a chronic condition where tissue similar to the uterine lining grows outside the uterus. It cannot be seen from the outside and must be diagnosed through laparoscopy (keyhole surgery). Common symptoms: severe pelvic pain especially during periods, pain during or after sex, pain during urination or bowel movements, heavy periods, and fertility difficulties. Pain typically worsens over time. Many people are told their pain is normal - it is not. Treatment options include pain management, hormonal therapy, and surgery. Source: NHS, MedlinePlus.</mh:description>
+    <mh:educationalNote>If you have severe period pain that gets worse over time, pain during sex, or difficulty getting pregnant, please see a doctor and ask about endometriosis. You deserve to be heard and treated.</mh:educationalNote>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#HormonalContraceptivesInstance"/>
+  </mh:Endometriosis>
+
+  <mh:Amenorrhea rdf:about="http://example.org/menstrual-health#Amenorrhea_3Months">
+    <rdfs:label>Amenorrhea 3+ Months</rdfs:label>
+    <mh:description>Missing 3 or more periods in a row (secondary amenorrhea). Common causes: pregnancy (always rule this out first), significant weight loss or gain, excessive exercise, high levels of stress, thyroid disorders, elevated prolactin, PCOS, and premature ovarian insufficiency. Should always be evaluated by a doctor. Treatment depends on the underlying cause.</mh:description>
+    <mh:educationalNote>Missing 3 or more periods is not something to ignore. The most common cause in young people is stress, weight changes, or over-exercising - but a doctor should check to find the cause.</mh:educationalNote>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#ExerciseRegimen"/>
+  </mh:Amenorrhea>
+
+  <!-- NEW: PMS instance -->
+  <mh:PMS rdf:about="http://example.org/menstrual-health#PMS_General">
+    <rdfs:label>Premenstrual Syndrome</rdfs:label>
+    <mh:prevalence>Affects up to 3 in 4 women at some point in their lives</mh:prevalence>
+    <mh:description>PMS causes a range of physical and emotional symptoms in the 1-2 weeks before a period. Common symptoms include bloating, breast tenderness, headaches, fatigue, mood swings, irritability, anxiety, and food cravings. Symptoms disappear when the period starts. Mild PMS is managed through lifestyle changes. Severe PMS may require medical treatment. Tracking symptoms helps identify patterns.</mh:description>
+    <mh:educationalNote>PMS is real and very common. Tracking your symptoms over a few cycles can help you and your doctor understand your patterns. You do not have to just put up with it - there are things that can help.</mh:educationalNote>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#ExerciseRegimen"/>
+  </mh:PMS>
+
+  <!-- NEW: Fibroids instance -->
+  <mh:Fibroids rdf:about="http://example.org/menstrual-health#Fibroids_Uterine">
+    <rdfs:label>Uterine Fibroids</rdfs:label>
+    <mh:prevalence>Affect 2 in 3 women during their lifetime; most common in women in their 30s and 40s</mh:prevalence>
+    <mh:description>Non-cancerous growths in or on the uterus. Size ranges from a pea to a melon. Many cause no symptoms. When symptomatic: heavy or prolonged periods, pelvic pressure or pain, frequent urination, backache, and in some cases difficulty conceiving. Diagnosed by ultrasound. Not cancerous and do not increase cancer risk. Many treatment options exist from medication to minimally invasive procedures and surgery depending on size, symptoms, and fertility plans. Source: NHS.</mh:description>
+    <mh:educationalNote>Fibroids are non-cancerous and very common. Many people have fibroids and never know. If you have heavy periods or pelvic pressure, mention it to a doctor - fibroids are very treatable.</mh:educationalNote>
+  </mh:Fibroids>
+
+  <!-- NEW: Menarche instance -->
+  <mh:Menarche rdf:about="http://example.org/menstrual-health#Menarche_FirstPeriod">
+    <rdfs:label>First Period (Menarche)</rdfs:label>
+    <mh:description>The first ever period. Usually occurs 2-3 years after breast development begins, typically between ages 10 and 16. The first period may be light or irregular. In the first 1-2 years, cycles are often irregular as hormones settle. It is completely normal to feel surprised, scared, or unprepared. Preparing a small period kit (pads, clean underwear, pain relief) in a school bag can help. Source: NHS, WHO.</mh:description>
+    <mh:educationalNote>Getting your first period can feel scary, but it is a completely normal part of growing up. Your periods may be irregular for the first year or two - this is normal. It is always okay to ask a trusted adult or doctor for help.</mh:educationalNote>
+  </mh:Menarche>
+
+  <!-- == HYGIENE PRODUCT INSTANCES == -->
+
+  <mh:Pad rdf:about="http://example.org/menstrual-health#StandardPad_Regular">
+    <rdfs:label>Standard Regular Pad</rdfs:label>
+    <mh:description>A disposable absorbent pad attached inside underwear with adhesive. Regular absorbency suitable for moderate flow. Should be changed every 3-4 hours to prevent odour and bacterial growth. Available in regular, maxi, overnight, and ultra-thin varieties. Most widely available and commonly used product globally.</mh:description>
+    <mh:educationalNote>Pads are the most widely available period product. Change your pad every 3-4 hours, or more often if your flow is heavy. Always wash your hands before and after changing.</mh:educationalNote>
+  </mh:Pad>
+
+  <!-- NEW: Overnight pad -->
+  <mh:Pad rdf:about="http://example.org/menstrual-health#OvernightPad">
+    <rdfs:label>Overnight Pad</rdfs:label>
+    <mh:description>A longer, more absorbent disposable pad designed for overnight use. Provides coverage and protection for 8-10 hours during sleep. Useful for heavy flow at night. Should still be changed when you wake up and at regular intervals during the day if used then.</mh:description>
+    <mh:educationalNote>Overnight pads are longer and more absorbent for sleeping. Put a fresh one on just before bed and change it first thing in the morning.</mh:educationalNote>
+  </mh:Pad>
+
+  <mh:Tampon rdf:about="http://example.org/menstrual-health#SuperAbsorbentTampon">
+    <rdfs:label>Super Absorbent Tampon</rdfs:label>
+    <mh:description>A high-absorbency tampon for heavier flow days. Inserted internally into the vagina. Must be changed every 4-8 hours. Never leave a tampon in for more than 8 hours as this raises the risk of Toxic Shock Syndrome (TSS). TSS is rare but serious. If you experience sudden fever, rash, vomiting, or dizziness while using a tampon, remove it and seek medical help immediately. Source: NHS.</mh:description>
+    <mh:educationalNote>Tampons are safe to use as long as you change them every 4-8 hours and never leave one in overnight for more than 8 hours.</mh:educationalNote>
+  </mh:Tampon>
+
+  <mh:MenstrualCup rdf:about="http://example.org/menstrual-health#SiliconesMenstrualCup">
+    <rdfs:label>Silicone Menstrual Cup</rdfs:label>
+    <mh:description>A reusable medical-grade silicone cup inserted into the vagina to collect menstrual blood. Can hold more fluid than a tampon or pad. Worn for up to 12 hours. Remove, empty, and rinse with clean water. At the end of each cycle, sterilise by boiling in water for 5 minutes. One cup lasts up to 10 years, making it very cost-effective and eco-friendly. Takes a few cycles to learn insertion and removal technique. Source: NHS.</mh:description>
+    <mh:educationalNote>Menstrual cups take a little practice to use but can last up to 10 years. They are a very cost-effective and environmentally friendly option.</mh:educationalNote>
+  </mh:MenstrualCup>
+
+  <mh:ReusableClothPad rdf:about="http://example.org/menstrual-health#ClothPad_Homemade">
+    <rdfs:label>Homemade Cloth Pad</rdfs:label>
+    <mh:description>A washable cloth pad made from clean absorbent fabric. An accessible and affordable option in low-income settings. Must be washed with soap and clean water immediately after use and dried in direct sunlight to kill bacteria. Never use if not properly cleaned and dried as this can cause infection. Source: UNICEF.</mh:description>
+    <mh:educationalNote>Cloth pads are a safe and affordable option if properly washed with soap and dried in the sun. Never use a damp or unwashed cloth pad as it can cause infection.</mh:educationalNote>
+  </mh:ReusableClothPad>
+
+  <!-- == CULTURAL INSTANCES == -->
+
+  <mh:SouthAsian rdf:about="http://example.org/menstrual-health#SouthAsian_Indian">
+    <rdfs:label>South Asian - Indian Context</rdfs:label>
+    <mh:description>In many Indian communities, menstruation is associated with impurity and may involve restrictions on cooking, entering religious spaces, or participating in ceremonies. These traditions vary widely across regions and families. Many families are now more open about menstruation. Respectful education that acknowledges cultural beliefs while providing accurate health information is most effective.</mh:description>
+    <mh:educationalNote>Cultural practices around menstruation vary widely. While some families follow traditional restrictions, every person deserves access to accurate health information and safe products regardless of cultural background.</mh:educationalNote>
+  </mh:SouthAsian>
+
+  <!-- NEW: Sri Lankan cultural instance -->
+  <mh:SriLankan rdf:about="http://example.org/menstrual-health#SriLankan_Context">
+    <rdfs:label>Sri Lankan Cultural Context</rdfs:label>
+    <mh:description>In Sri Lanka, the first period (menarche) is often marked by a coming-of-age ceremony celebrated with family. Menstruation may be viewed as a private topic. Buddhist, Hindu, and Muslim traditions in Sri Lanka may each have specific beliefs about menstruation. In rural areas, access to menstrual products and information may be more limited. Sinhala-speaking communities benefit from health information in their native language.</mh:description>
+    <mh:educationalNote>In Sri Lanka, it is common for the first period to be celebrated. It is also okay to talk openly about period health with a trusted adult, school nurse, or doctor. Your health matters.</mh:educationalNote>
+  </mh:SriLankan>
+
+  <!-- == AGE GROUP INSTANCES == -->
+
+  <mh:Adolescent rdf:about="http://example.org/menstrual-health#Teenager_FirstPeriod">
+    <rdfs:label>Teenager - First Period</rdfs:label>
+    <mh:description>Adolescent aged 10-19 experiencing their first period or the early years of menstruation. Cycles may be irregular for the first 1-2 years. Key information needs: what is normal, how to use pads or tampons, how to manage cramps, and when to talk to an adult or doctor. Emotional support and non-judgemental information are especially important at this age.</mh:description>
+    <mh:educationalNote>Getting your first period can feel overwhelming, but it is completely normal. Irregular periods in the first couple of years are also normal. It is always okay to ask questions - there are no silly questions about your health.</mh:educationalNote>
+  </mh:Adolescent>
+
+  <mh:YoungAdult rdf:about="http://example.org/menstrual-health#YoungWoman_Reproductive">
+    <rdfs:label>Young Woman - Reproductive Years</rdfs:label>
+    <mh:description>Adult aged 20-35 in their reproductive years. Cycles are usually regular. May be managing ongoing conditions such as PCOS, endometriosis, or PMS. Important topics include contraception, fertility awareness, and managing chronic conditions with medical support.</mh:description>
+    <mh:educationalNote>During your reproductive years, regular health checks and awareness of your cycle patterns are important. If your periods change significantly, it is always worth discussing with a doctor.</mh:educationalNote>
+  </mh:YoungAdult>
+
+  <!-- == TREATMENT INSTANCES == -->
+
+  <mh:Medication rdf:about="http://example.org/menstrual-health#IbuprofenPainRelief">
+    <rdfs:label>Ibuprofen for Pain Relief</rdfs:label>
+    <mh:description>Ibuprofen is a non-steroidal anti-inflammatory drug (NSAID) that reduces prostaglandins responsible for cramps. Most effective when taken at the start of a period or at the first sign of pain, rather than waiting until pain is severe. Standard dose for adults is 200-400mg every 4-6 hours, not exceeding 1200mg in 24 hours without medical advice. Take with food to protect the stomach. Not suitable for people with stomach ulcers, kidney problems, or certain other conditions. Source: NHS.</mh:description>
+    <mh:educationalNote>Ibuprofen works best for period pain when taken as soon as cramping starts - do not wait until the pain is very bad. Always take it with food and do not exceed the recommended dose.</mh:educationalNote>
+  </mh:Medication>
+
+  <!-- NEW: Paracetamol instance -->
+  <mh:Medication rdf:about="http://example.org/menstrual-health#ParacetamolPainRelief">
+    <rdfs:label>Paracetamol for Pain Relief</rdfs:label>
+    <mh:description>Paracetamol (acetaminophen) is a pain reliever that can help with mild-to-moderate period pain when ibuprofen is not suitable. Standard adult dose is 500mg-1g every 4-6 hours, not exceeding 4g in 24 hours. Safe to take on an empty stomach. Can be combined with ibuprofen for greater effect (take separately, not together). Source: NHS.</mh:description>
+    <mh:educationalNote>Paracetamol is a safe and gentle pain relief option for period cramps. Take it as directed on the packet and do not exceed 4 tablets (500mg each) in 24 hours.</mh:educationalNote>
+  </mh:Medication>
+
+  <!-- NEW: Iron supplements instance -->
+  <mh:Medication rdf:about="http://example.org/menstrual-health#IronSupplementsInstance">
+    <rdfs:label>Iron Supplements</rdfs:label>
+    <mh:description>Prescribed or recommended for iron-deficiency anaemia caused by heavy menstrual bleeding. Ferrous sulfate is the most common form. Take on an empty stomach for best absorption, or with a small amount of food if it causes stomach upset. Take with orange juice (vitamin C) to improve absorption. Stools may darken during use - this is normal. Source: NHS.</mh:description>
+    <mh:educationalNote>If you feel very tired, look pale, or feel out of breath, heavy periods may have caused low iron. A doctor can test for this and recommend iron supplements if needed.</mh:educationalNote>
+  </mh:Medication>
+
+  <!-- NEW: Hormonal contraceptives instance -->
+  <mh:Medication rdf:about="http://example.org/menstrual-health#HormonalContraceptivesInstance">
+    <rdfs:label>Hormonal Contraceptive Treatment</rdfs:label>
+    <mh:description>Hormonal treatments such as the combined oral contraceptive pill can reduce period pain, lighten heavy periods, and manage symptoms of endometriosis, PCOS, and PMS. Must be prescribed by a doctor or clinic after reviewing personal health history. Different types suit different people. They also provide contraception. Not suitable for everyone.</mh:description>
+    <mh:educationalNote>Hormonal treatments like the pill can greatly improve period-related symptoms. A doctor or family planning clinic can help find the right option for you.</mh:educationalNote>
+  </mh:Medication>
+
+  <mh:LifestyleChange rdf:about="http://example.org/menstrual-health#ExerciseRegimen">
+    <rdfs:label>Regular Exercise Program</rdfs:label>
+    <mh:description>Regular moderate exercise (at least 30 minutes, 5 days a week) helps manage menstrual symptoms by releasing endorphins (natural pain relievers), reducing prostaglandin levels, improving insulin sensitivity (beneficial for PCOS), and stabilising mood. Exercise such as walking, swimming, cycling, or yoga is suitable. Excessive intense exercise can worsen amenorrhea.</mh:description>
+    <mh:educationalNote>Regular moderate exercise - such as a 30-minute walk - can significantly reduce period pain and PMS symptoms over time. It does not have to be intense to be helpful.</mh:educationalNote>
+  </mh:LifestyleChange>
+
+  <!-- NEW: Reduced salt diet instance -->
+  <mh:LifestyleChange rdf:about="http://example.org/menstrual-health#ReducedSaltDiet">
+    <rdfs:label>Reduced Salt Diet</rdfs:label>
+    <mh:description>Reducing dietary salt and processed foods in the premenstrual phase helps reduce water retention and bloating. Aim to limit salt to less than 6g per day. Avoid crisps, processed meats, tinned soups, and takeaways in the week before your period. Drinking more water paradoxically helps reduce water retention. Source: NHS.</mh:description>
+    <mh:educationalNote>Reducing salty and processed foods in the week before your period can noticeably reduce bloating. Drinking extra water also helps flush excess water from your body.</mh:educationalNote>
+  </mh:LifestyleChange>
+
+  <!-- NEW: Iron rich food instance -->
+  <mh:LifestyleChange rdf:about="http://example.org/menstrual-health#IronRichFoodInstance">
+    <rdfs:label>Iron Rich Diet</rdfs:label>
+    <mh:description>Eating iron-rich foods helps replace iron lost during menstruation and prevents anaemia. Good sources include: red lentils, chickpeas, spinach, kale, tofu, red meat, sardines, and fortified breakfast cereals. Pair with vitamin C sources (orange juice, tomatoes, bell peppers) to increase iron absorption. Avoid tea or coffee with meals as tannins reduce iron absorption. Source: NHS, WHO.</mh:description>
+    <mh:educationalNote>Eating iron-rich foods like lentils, spinach, and red meat helps your body replace iron lost during your period. Drinking a glass of orange juice with your meal helps your body absorb the iron better.</mh:educationalNote>
+  </mh:LifestyleChange>
+
+  <mh:SelfCare rdf:about="http://example.org/menstrual-health#HeatingPadTreatment">
+    <rdfs:label>Heating Pad Therapy</rdfs:label>
+    <mh:description>Applying heat to the lower abdomen or lower back for 15-20 minutes at a time. Works as effectively as ibuprofen for mild-to-moderate cramps according to clinical evidence. Use a commercially available heat patch, a hot water bottle wrapped in a cloth, or a warm towel. Do not apply directly to bare skin to avoid burns. Source: NHS.</mh:description>
+    <mh:educationalNote>A hot water bottle or heat pad on your lower tummy is one of the most effective ways to ease period cramps. Studies show it works as well as pain relief tablets for mild-to-moderate cramps.</mh:educationalNote>
+  </mh:SelfCare>
+
+  <!-- NEW: Yoga self-care instance -->
+  <mh:SelfCare rdf:about="http://example.org/menstrual-health#YogaSelfCare">
+    <rdfs:label>Yoga for Menstrual Relief</rdfs:label>
+    <mh:description>Gentle yoga poses can relieve menstrual cramps, reduce bloating, and improve mood. Recommended poses: Child's Pose (Balasana) for lower back and belly tension; Cat-Cow stretch for lower back; Supine Twist (Supta Matsyendrasana) for abdominal cramping; Legs up the Wall (Viparita Karani) for fatigue and swollen legs. Even 10-15 minutes of gentle stretching can provide relief. Source: MedlinePlus.</mh:description>
+    <mh:educationalNote>Gentle yoga poses like Child's Pose and slow Cat-Cow stretches can help relieve period cramps and lower back pain. Even 10 minutes of stretching can make a real difference.</mh:educationalNote>
+  </mh:SelfCare>
+
+  <!-- == MYTH INSTANCES == -->
+
+  <mh:MythAboutActivity rdf:about="http://example.org/menstrual-health#Myth_NoExercise">
+    <rdfs:label>Myth: No Exercise During Period</rdfs:label>
+    <mh:description>MYTH: You should not exercise during your period. FACT: Exercise is not only safe during menstruation - it is beneficial. Physical activity releases endorphins that act as natural pain relievers, can reduce cramping and fatigue, and improves mood. There is no medical reason to avoid swimming, sports, gym, or any other physical activity during a period. Source: NHS, WHO.</mh:description>
+    <mh:educationalNote>You can absolutely exercise during your period. In fact, movement helps relieve cramps and boost your mood. Use whichever period product you prefer and carry on.</mh:educationalNote>
+    <mh:commonInCulture rdf:resource="http://example.org/menstrual-health#SouthAsian_Indian"/>
+  </mh:MythAboutActivity>
+
+  <mh:MythAboutPurity rdf:about="http://example.org/menstrual-health#Myth_Impurity">
+    <rdfs:label>Myth: Menstruation is Impure</rdfs:label>
+    <mh:description>MYTH: Menstruation means a person is impure or unclean and should be isolated or restricted. FACT: Menstruation is a normal, healthy biological process. There is no medical basis for viewing menstruation as impure. Such beliefs can cause shame, prevent people from accessing hygiene products and healthcare, and negatively affect mental health. All people deserve dignity and access to resources regardless of menstrual status. Source: UNICEF, UNESCO.</mh:description>
+    <mh:educationalNote>Menstruation is a healthy, normal body process. It does not make you impure or unclean in any way. Everyone deserves to feel comfortable and safe during their period.</mh:educationalNote>
+    <mh:commonInCulture rdf:resource="http://example.org/menstrual-health#SouthAsian_Indian"/>
+  </mh:MythAboutPurity>
+
+  <mh:MythAboutPain rdf:about="http://example.org/menstrual-health#Myth_PainIsNormal">
+    <rdfs:label>Myth: Severe Pain is Normal</rdfs:label>
+    <mh:description>MYTH: Severe period pain that stops you functioning is just a normal part of menstruation and must be endured. FACT: Mild cramping in the first 1-2 days of a period is common. However, pain severe enough to prevent attending school, work, or daily activities is NOT normal and may indicate endometriosis, fibroids, or dysmenorrhea. These conditions are treatable. People with severe period pain deserve medical support. Source: NHS, MedlinePlus.</mh:description>
+    <mh:educationalNote>Mild cramps are normal. Severe pain that stops you functioning is not. If your period pain is severely disrupting your life, please see a doctor - you should not have to just put up with it.</mh:educationalNote>
+  </mh:MythAboutPain>
+
+  <!-- == HYGIENE PRACTICE INSTANCES == -->
+
+  <mh:ProductChangePractice rdf:about="http://example.org/menstrual-health#ChangeFrequency_General">
+    <rdfs:label>Product Change Frequency Guide</rdfs:label>
+    <mh:description>Pads: change every 3-4 hours (more often on heavy flow days). Tampons: change every 4-8 hours, never longer than 8 hours. Menstrual cups: empty every 8-12 hours. Period underwear: change daily. Changing products regularly prevents bacterial growth, odour, and reduces infection risk. Always wash hands before and after changing. Source: NHS, UNICEF.</mh:description>
+    <mh:educationalNote>Change your pad every 3-4 hours, tampon every 4-8 hours, and menstrual cup every 8-12 hours. Always wash your hands before and after.</mh:educationalNote>
+  </mh:ProductChangePractice>
+
+  <mh:WashingPractice rdf:about="http://example.org/menstrual-health#WashingPractice_Correct">
+    <rdfs:label>Correct Washing Practice</rdfs:label>
+    <mh:description>Wash the external genital area (vulva) with clean water and mild unperfumed soap once or twice a day. The vagina is self-cleaning and should not be washed internally (no douching or vaginal sprays). These disrupt the natural pH and bacterial balance, increasing the risk of bacterial vaginosis and thrush. Always wipe from front to back after using the toilet. Source: NHS, WHO.</mh:description>
+    <mh:educationalNote>You only need to wash the outside (the vulva) with water and mild soap during your period. Never put soap, sprays, or perfumed products inside the vagina - it cleans itself naturally.</mh:educationalNote>
+  </mh:WashingPractice>
+
+  <!-- ================================================================ -->
+  <!-- INSTANCE RELATIONSHIPS                                           -->
+  <!-- [Original 4 relationships preserved + many new ones added]      -->
+  <!-- ================================================================ -->
+
+  <!-- Original relationships (preserved) -->
+  <rdf:Description rdf:about="http://example.org/menstrual-health#RegularCycle_28Days">
+    <mh:hasSymptom rdf:resource="http://example.org/menstrual-health#Cramping_Mild"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/menstrual-health#Cramping_Severe">
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#IbuprofenPainRelief"/>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#HeatingPadTreatment"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/menstrual-health#HeavyBleeding_Abnormal">
+    <mh:requiresProduct rdf:resource="http://example.org/menstrual-health#StandardPad_Regular"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/menstrual-health#Amenorrhea_3Months">
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#ExerciseRegimen"/>
+  </rdf:Description>
+
+  <!-- New relationships: Conditions -> Symptoms -->
+  <rdf:Description rdf:about="http://example.org/menstrual-health#PCOS_Diagnosed">
+    <mh:associatedWith rdf:resource="http://example.org/menstrual-health#Bloating_Premenstrual"/>
+    <mh:associatedWith rdf:resource="http://example.org/menstrual-health#Fatigue_Menstrual"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/menstrual-health#Endometriosis_Diagnosed">
+    <mh:associatedWith rdf:resource="http://example.org/menstrual-health#Cramping_Severe"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/menstrual-health#PMS_General">
+    <mh:associatedWith rdf:resource="http://example.org/menstrual-health#Bloating_Premenstrual"/>
+    <mh:associatedWith rdf:resource="http://example.org/menstrual-health#Fatigue_Menstrual"/>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#ReducedSaltDiet"/>
+  </rdf:Description>
+
+  <!-- New relationships: Symptoms -> Phases -->
+  <rdf:Description rdf:about="http://example.org/menstrual-health#Cramping_Mild">
+    <mh:occursInPhase rdf:resource="http://example.org/menstrual-health#MenstruationPhase_Normal"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/menstrual-health#Bloating_Premenstrual">
+    <mh:occursInPhase rdf:resource="http://example.org/menstrual-health#LutealPhase_Normal"/>
+  </rdf:Description>
+
+  <!-- New relationships: Treatments -> Products for specific situations -->
+  <rdf:Description rdf:about="http://example.org/menstrual-health#Cramping_Mild">
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#HeatingPadTreatment"/>
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#YogaSelfCare"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/menstrual-health#Fatigue_Menstrual">
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#IronRichFoodInstance"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/menstrual-health#Bloating_Premenstrual">
+    <mh:treatedBy rdf:resource="http://example.org/menstrual-health#ReducedSaltDiet"/>
+  </rdf:Description>
+
+</rdf:RDF>

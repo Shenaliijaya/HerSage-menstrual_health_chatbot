@@ -1,0 +1,8 @@
+{
+  "name": "Menstrual Health Chatbot",
+  "short_name": "MH Chatbot",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
