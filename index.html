@@ -489,13 +489,22 @@
     <span class="header-pill">Sri Lanka</span>
   </header>
 
-  <main aria-label="Chat conversation area">
+    <main aria-label="Chat conversation area">
     <section id="chat" aria-live="polite" aria-label="Chat messages"></section>
-
-    <aside id="xaiPanel" aria-label="How I answered" hidden>
-      <!-- XAI panel content is injected by JavaScript -->
-    </aside>
   </main>
+
+  <!-- XAI Explainability Panel -->
+  <div class="xai-panel" id="xaiPanel" aria-label="How I answered">
+    <div class="xai-header">
+      <span class="xai-title">&#128269; How I answered</span>
+      <button class="xai-close" id="xaiClose" aria-label="Close explain panel">&times;</button>
+    </div>
+    <div class="xai-body" id="xaiBody">
+      <div class="xai-empty">
+        Send a message to see which ontology facts were used to generate the response.
+      </div>
+    </div>
+  </div>
 
   <div class="composer">
     <div class="culture-row">
