@@ -12,7 +12,7 @@ OLLAMA_URL    = os.getenv("OLLAMA_URL",   "http://localhost:11434")
 
 # ── Feature flags ─────────────────────────────────────────────────────────────
 # LLM polish is NOW ENABLED - Mistral polishes ontology facts into natural language
-ENABLE_LLM_POLISH = False
+ENABLE_LLM_POLISH = True
 
 # ── Response limits ───────────────────────────────────────────────────────────
 EXAMPLE_LIMIT = 3           # matches your original value

@@ -1,5 +1,6 @@
 // --- Config ---
-const API_URL = "https://hersage-menstrual-health-chatbot-api.onrender.com/chat"; 
+//const API_URL = "https://hersage-menstrual-health-chatbot-api.onrender.com/chat"; 
+const API_URL = "http://127.0.0.1:8000/chat";
 
 let sessionId = localStorage.getItem("session_id") || null;
 
